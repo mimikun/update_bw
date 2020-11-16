@@ -6,7 +6,7 @@ Update bitwarden-cli
 
 [source,shell]
 ----
-fisher add github.com/mimikun/update_bw
+fisher install mimikun/update_bw
 ----
 
 == Require
