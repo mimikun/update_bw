@@ -1,0 +1,16 @@
+= update_bw
+
+Update bitwarden-cli
+
+== Install
+
+[source,shell]
+----
+fisher add github.com/mimikun/update_bw
+----
+
+== Require
+
+* https://github.com/bitwarden/cli[bw - bitwarden cli]
+* https://github.com/mimikun/read_confirm[read_confirm]
+
