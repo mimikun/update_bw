@@ -7,14 +7,15 @@ function update_bw --description 'Update bitwarden-cli'
         set DESTINATION /usr/local/bin/bw
         if test $OLD_VERSION != $VERSION
             echo "Update found!"
-            curl -L https://github.com/bitwarden/cli/releases/download/v$VERSION/bw-linux-$VERSION.zip -o /tmp/bw.latest.zip
+            cd /tmp
+            wget https://github.com/bitwarden/cli/releases/download/v$VERSION/bw-linux-$VERSION.zip
             sleep 5
             set CURRENTDIR (pwd)
-            cd /tmp && unzip bw.latest.zip
+            cd /tmp && unzip bw-linux-$VERSION.zip
             sleep 5
             cd $CURRENTDIR
             sudo cp /tmp/bw $DESTINATION
-            sudo rm -f /tmp/bw*
+            sudo rm -rf /tmp/bw*
             sudo chmod 755 $DESTINATION
         else
             echo "No update required."
